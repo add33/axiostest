@@ -12,15 +12,11 @@ class Auth extends Component {
         let json = await AsyncStorage.getItem('cpm123_user')
         user = JSON.parse(json)
         if(user != null){
-            this.getAuthUser(user)
+            this.props.setUser(user)
+            this.props.navigation.navigate("Assets")
         }else{
             this.props.navigation.navigate('Login')
         }
-    }
-
-    async getAuthUser(user){
-        this.props.setUser(user)
-        this.props.navigation.navigate("Assets")
     }
 
     render() {

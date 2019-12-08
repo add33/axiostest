@@ -3,12 +3,12 @@ import { createStore, applyMiddleware, combineReducers } from 'redux';
 import axiosMiddleware from 'redux-axios-middleware';
 
 // import reducer from './../reducer';
-import _authUser from './reducers/Users';
-import _assets from './reducers/Assets';
+import authUser from './reducers/Users';
+import assets from './reducers/Assets';
 
 const reducer = combineReducers({
-  authUser:_authUser,
-  assets:_assets
+  authUser
+  assets
 })
 
 const client = axios.create({
